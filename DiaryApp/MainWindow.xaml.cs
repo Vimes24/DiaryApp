@@ -40,6 +40,16 @@ namespace DiaryApp
             ImageBrush image = new ImageBrush(new BitmapImage(imageUri));
             image.Stretch = Stretch.Fill;
             this.Background = image;
+            // Zapisanie zmian w ustawieniach - ostatnio wybrana tapeta pojawi sie przy kolejnym uruchomieniu aplikacji
+            DiaryApp.Properties.Settings.Default.LastImage = this.ImageComboBox.SelectedIndex;
+            DiaryApp.Properties.Settings.Default.Save();
+        }
+
+        // Wczytuje ostatnio zapisana tapete
+        private void StartWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            int fileIndex = DiaryApp.Properties.Settings.Default.LastImage;
+            this.ImageComboBox.SelectedIndex = fileIndex;
         }
     }
 }

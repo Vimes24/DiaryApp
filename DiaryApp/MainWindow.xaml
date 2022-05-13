@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiaryApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="393.05" Width="538.2" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
+        Title="MainWindow" Height="393.05" Width="538.2" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" Loaded="StartWindow_Loaded">
     <Window.Background>
         <ImageBrush ImageSource="pack://siteoforigin:,,,/Data/Pictures/1.jpg"/>
     </Window.Background>
@@ -25,8 +25,12 @@
                 <Canvas.Background>
                     <SolidColorBrush Color="#FFB2BED7" Opacity="0.35"/>
                 </Canvas.Background>
-                <Label Content="Background" Canvas.Left="10" Canvas.Top="6"/>
-                <ComboBox x:Name="ImageComboBox" Canvas.Left="88" Canvas.Top="9" Width="120" Cursor="Hand" SelectionChanged="ImageComboBox_SelectionChanged">
+                <Label Content="Background" Canvas.Top="16">
+                    <Label.Background>
+                        <SolidColorBrush Color="#FFB79F9F" Opacity="0.4"/>
+                    </Label.Background>
+                </Label>
+                <ComboBox x:Name="ImageComboBox" Canvas.Left="79" Canvas.Top="18" Width="120" Cursor="Hand" SelectionChanged="ImageComboBox_SelectionChanged">
                     <ComboBoxItem Content="Image 1" HorizontalAlignment="Left" Width="118.4"/>
                     <ComboBoxItem Content="Image 2" HorizontalAlignment="Left" Width="118.4"/>
                     <ComboBoxItem Content="Image 3" HorizontalAlignment="Left" Width="118.4"/>
