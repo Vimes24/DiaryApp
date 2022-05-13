@@ -6,11 +6,37 @@
         xmlns:local="clr-namespace:DiaryApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="393.05" Width="538.2" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None">
+    <Window.Background>
+        <ImageBrush ImageSource="pack://siteoforigin:,,,/Data/Pictures/1.jpg"/>
+    </Window.Background>
     <Grid>
         <DockPanel LastChildFill="False" Margin="0,0,-0.4,-0.2">
-            <Canvas x:Name="SidebarPanel" Background="#FFDDD2D2" Width="145" />
-            <Canvas x:Name="TopPanel" Background="#FFBCEAB1" Height="75" VerticalAlignment="Top" Margin="0" DockPanel.Dock="Top"/>
-            <Canvas x:Name="BottomPanel" Height="42" VerticalAlignment="Top" DockPanel.Dock="Bottom" Margin="0" Background="#FFB2BED7"/>
+            <Canvas x:Name="SidebarPanel" Width="145" >
+                <Canvas.Background>
+                    <SolidColorBrush Color="#FFDDD2D2" Opacity="0.4"/>
+                </Canvas.Background>
+            </Canvas>
+            <Canvas x:Name="TopPanel" Height="75" VerticalAlignment="Top" Margin="0" DockPanel.Dock="Top">
+                <Canvas.Background>
+                    <SolidColorBrush Color="#FFBCEAB1" Opacity="0.35"/>
+                </Canvas.Background>
+            </Canvas>
+            <Canvas x:Name="BottomPanel" Height="42" VerticalAlignment="Top" DockPanel.Dock="Bottom" Margin="0">
+                <Canvas.Background>
+                    <SolidColorBrush Color="#FFB2BED7" Opacity="0.35"/>
+                </Canvas.Background>
+                <Label Content="Background" Canvas.Left="10" Canvas.Top="6"/>
+                <ComboBox x:Name="ImageComboBox" Canvas.Left="88" Canvas.Top="9" Width="120" Cursor="Hand" SelectionChanged="ImageComboBox_SelectionChanged">
+                    <ComboBoxItem Content="Image 1" HorizontalAlignment="Left" Width="118.4"/>
+                    <ComboBoxItem Content="Image 2" HorizontalAlignment="Left" Width="118.4"/>
+                    <ComboBoxItem Content="Image 3" HorizontalAlignment="Left" Width="118.4"/>
+                    <ComboBoxItem Content="Image 4" HorizontalAlignment="Left" Width="118.4"/>
+                    <ComboBoxItem Content="Image 5" HorizontalAlignment="Left" Width="118.4"/>
+                    <ComboBoxItem Content="Image 6" HorizontalAlignment="Left" Width="118.4"/>
+                    <ComboBoxItem Content="Image 7" HorizontalAlignment="Left" Width="118.4"/>
+                    <ComboBoxItem Content="Image 8" HorizontalAlignment="Left" Width="118.4"/>
+                </ComboBox>
+            </Canvas>
         </DockPanel>
         <Button Content="Button" HorizontalAlignment="Left" Margin="230,130,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
 

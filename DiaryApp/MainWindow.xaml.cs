@@ -29,5 +29,17 @@ namespace DiaryApp
         {
             this.Close();
         }
+
+        // Ustawienie zmiany tapety w oknie glownym
+        // Utworzenie String imageName jako dowiazanie do nazwy tapety (+1 bo index zaczynamy od 0)
+        // Uri imageUri - obiekt odnoszacy sie do lokalizacji danej tapety
+        private void ImageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            String imageName = Environment.CurrentDirectory + "\\Data\\Pictures\\" + (this.ImageComboBox.SelectedIndex + 1).ToString() + ".jpg";
+            Uri imageUri = new Uri(imageName);
+            ImageBrush image = new ImageBrush(new BitmapImage(imageUri));
+            image.Stretch = Stretch.Fill;
+            this.Background = image;
+        }
     }
 }
