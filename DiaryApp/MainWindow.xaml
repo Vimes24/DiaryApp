@@ -15,6 +15,12 @@
                 <Canvas.Background>
                     <SolidColorBrush Color="#FFDDD2D2" Opacity="0.4"/>
                 </Canvas.Background>
+                <Border BorderBrush="#FFF4800B" BorderThickness="4" Height="125" Canvas.Left="10" Canvas.Top="10" Width="125" CornerRadius ="200" Background="Black">
+                    <Canvas>
+                        <Label x:Name="TimeLabel" Content="15:30" Canvas.Top="31" Height="55" Width="117" Background="Black" Foreground="#FFF4800B" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28"/>
+
+                    </Canvas>
+                </Border>
             </Canvas>
             <Canvas x:Name="TopPanel" Height="75" VerticalAlignment="Top" Margin="0" DockPanel.Dock="Top">
                 <Canvas.Background>

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace DiaryApp
 {
@@ -45,11 +46,22 @@ namespace DiaryApp
             DiaryApp.Properties.Settings.Default.Save();
         }
 
-        // Wczytuje ostatnio zapisana tapete
+        // Wczytuje ostatnio zapisana tapete i uruchamia zegar
         private void StartWindow_Loaded(object sender, RoutedEventArgs e)
         {
             int fileIndex = DiaryApp.Properties.Settings.Default.LastImage;
             this.ImageComboBox.SelectedIndex = fileIndex;
+            // Uruchamianie zegara w aplikacji, czas zmienia sie co 1s
+            this.TimeLabel.Content = "...";
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Tick += TimeUpdate;
+            timer.Start();
+        }
+        // zawartosc etykiety zostala przypisana do aktualnego czasu komputera
+        private void TimeUpdate(object sender, EventArgs e)
+        {
+            this.TimeLabel.Content = DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }
