@@ -34,5 +34,77 @@ namespace DiaryApp.Properties {
                 this["LastImage"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Admin")]
+        public string User1Name {
+            get {
+                return ((string)(this["User1Name"]));
+            }
+            set {
+                this["User1Name"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("12345")]
+        public string User1Pass {
+            get {
+                return ((string)(this["User1Pass"]));
+            }
+            set {
+                this["User1Pass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string User2Name {
+            get {
+                return ((string)(this["User2Name"]));
+            }
+            set {
+                this["User2Name"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string User2Pass {
+            get {
+                return ((string)(this["User2Pass"]));
+            }
+            set {
+                this["User2Pass"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string User3Name {
+            get {
+                return ((string)(this["User3Name"]));
+            }
+            set {
+                this["User3Name"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string User3Pass {
+            get {
+                return ((string)(this["User3Pass"]));
+            }
+            set {
+                this["User3Pass"] = value;
+            }
+        }
     }
 }

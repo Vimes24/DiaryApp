@@ -26,11 +26,6 @@ namespace DiaryApp
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         // Ustawienie zmiany tapety w oknie glownym
         // Utworzenie String imageName jako dowiazanie do nazwy tapety (+1 bo index zaczynamy od 0)
         // Uri imageUri - obiekt odnoszacy sie do lokalizacji danej tapety
@@ -139,6 +134,12 @@ namespace DiaryApp
             Canvas.SetLeft(MinButt, TopPanel.ActualWidth - 60);
             Canvas.SetLeft(CloseButt, TopPanel.ActualWidth - 30);
 
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            DiaryApp.UserWindow userWindow = new UserWindow();
+            userWindow.Show();
         }
     }
 }
