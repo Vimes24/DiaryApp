@@ -5,27 +5,112 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiaryApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="393.05" Width="538.2" WindowStartupLocation="CenterScreen" WindowState="Maximized" WindowStyle="None" Loaded="StartWindow_Loaded">
+        Title="MainWindow" Height="443.2" Width="723.15" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="StartWindow_Loaded" WindowState="Maximized" SizeChanged="StartWindow_SizeChanged">
     <Window.Background>
         <ImageBrush ImageSource="pack://siteoforigin:,,,/Data/Pictures/1.jpg"/>
     </Window.Background>
     <Grid>
         <DockPanel LastChildFill="False" Margin="0,0,-0.4,-0.2">
-            <Canvas x:Name="SidebarPanel" Width="145" >
+            <Canvas x:Name="SidebarPanel" Width="180" Margin="0,0,0,-0.2" >
                 <Canvas.Background>
-                    <SolidColorBrush Color="#FFDDD2D2" Opacity="0.4"/>
+                    <ImageBrush/>
                 </Canvas.Background>
-                <Border BorderBrush="#FFF4800B" BorderThickness="4" Height="125" Canvas.Left="10" Canvas.Top="10" Width="125" CornerRadius ="200" Background="Black">
+                <Border BorderBrush="#FFF4800B" BorderThickness="4" Height="150" Canvas.Left="15" Canvas.Top="10" Width="150" CornerRadius ="200" Background="Black">
                     <Canvas>
-                        <Label x:Name="TimeLabel" Content="15:30" Canvas.Top="31" Height="55" Width="117" Background="Black" Foreground="#FFF4800B" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28"/>
-
+                        <Label x:Name="TimeLabel" Content="15:30" Canvas.Top="41" Height="55" Width="117" Background="Black" Foreground="#FFF4800B" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Canvas.Left="11"/>
                     </Canvas>
                 </Border>
+                <Canvas x:Name="CalendarPanel" Height="155" Canvas.Left="10" Canvas.Top="170" Width="160">
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="Data/Other/calander.png"/>
+                    </Canvas.Background>
+                    <Label x:Name="YearLabel" Content="2022" Canvas.Top="25" FontSize="14" Foreground="#FFF9F9F9" FontWeight="Bold" Height="30" Canvas.Left="20" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                    <Label x:Name="MonthLabel" Content="April" Canvas.Top="25" FontSize="14" Foreground="#FFF9F9F9" FontWeight="Bold" Height="30" Canvas.Left="80" Width="64" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                    <Label x:Name="DayNumberLabel" Content="12" Canvas.Left="25" Canvas.Top="65" Width="105" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="26"/>
+                    <Label x:Name="DayNameLabel" Content="Monday" Canvas.Top="110" FontSize="14" Foreground="Black" FontWeight="Bold" Height="30" Canvas.Left="25" Width="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                </Canvas>
             </Canvas>
-            <Canvas x:Name="TopPanel" Height="75" VerticalAlignment="Top" Margin="0" DockPanel.Dock="Top">
+            <Canvas x:Name="TopPanel" Height="65" VerticalAlignment="Top" Margin="0.2,0,0,0" DockPanel.Dock="Top">
                 <Canvas.Background>
                     <SolidColorBrush Color="#FFBCEAB1" Opacity="0.35"/>
                 </Canvas.Background>
+                <Menu x:Name="MemoButt" Height="55" Canvas.Left="5" Width="80" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
+                    <MenuItem Height="55" Width="80" Cursor="Hand">
+                        <MenuItem.Header>
+                            <StackPanel Height="42" Width="65" HorizontalAlignment="Center">
+                                <Image Source="Data/MainWindowImages/add_memo.png" Height="21" Margin="0"/>
+                                <Label Content="Add Memo F2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="9" Margin="-8,0,-7.2,0"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </Menu>
+                <Menu x:Name="SearchButt" Height="55" Canvas.Left="90" Width="85" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
+                    <MenuItem Height="55" Width="86" Cursor="Hand">
+                        <MenuItem.Header>
+                            <StackPanel Height="43" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="Data/MainWindowImages/search_memo.png" Height="23" Margin="0,0,2.4,0"/>
+                                <Label Content="Search Memo F3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="9" Margin="-8,0,-8.6,0"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                    </MenuItem>
+                </Menu>
+                <Menu x:Name="SettingsButt" Height="55" Canvas.Left="180" Width="85" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
+                    <MenuItem Height="55" Width="86" Cursor="Hand">
+                        <MenuItem.Header>
+                            <StackPanel Height="43" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="Data/MainWindowImages/settings.png" Height="23" Margin="0,0,2.4,0"/>
+                                <Label Content="Settings F4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="9" Margin="-8,0,-8.6,0"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                        <MenuItem Header="Settings" Height="21" Margin="-1,0,-0.2,0" FontSize="9">
+                            <MenuItem.Icon>
+                                <Image Source="Data/MainWindowImages/settings.png" Margin="-2,-1,-6,-1" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <Menu x:Name="ToolsButt" Height="55" Canvas.Left="270" Width="85" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
+                    <MenuItem Height="55" Width="86" Cursor="Hand">
+                        <MenuItem.Header>
+                            <StackPanel Height="43" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="Data/MainWindowImages/tools.png" Height="23" Margin="0,0,2.4,0"/>
+                                <Label Content="Tools F5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="9" Margin="-8,0,-8.6,0"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                        <MenuItem Header="Tools" Height="21" Margin="-1,0,-0.2,0" FontSize="9">
+                            <MenuItem.Icon>
+                                <Image Source="Data/MainWindowImages/tools.png" Margin="-4,-1,-5,-1" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <Menu x:Name="InfoButt" Height="55" Canvas.Left="360" Width="85" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
+                    <MenuItem Height="55" Width="86" Cursor="Hand">
+                        <MenuItem.Header>
+                            <StackPanel Height="43" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="Data/MainWindowImages/about.png" Height="23" Margin="0,0,2.4,0"/>
+                                <Label Content="About F6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="9" Margin="-8,0,-8.6,0"/>
+                            </StackPanel>
+                        </MenuItem.Header>
+                        <MenuItem Header="About Me" Height="24" Margin="-1,0,0,0" FontSize="9">
+                            <MenuItem.Icon>
+                                <Image Source="Data/MainWindowImages/about.png" Margin="-4,2,-5,-1" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem Header="Help" Height="24" Margin="-1,0,0,0" FontSize="9">
+                            <MenuItem.Icon>
+                                <Image Source="Data/MainWindowImages/help.png" Margin="-4,2,-5,-1" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <Button x:Name="MinButt" Canvas.Left="480" Width="25" Height="25" Cursor="Hand" Click="MinButt_Click">
+                    <Image Height="25" Width="25" Source="Data/MainWindowImages/Minimize_butt.png"/>
+                </Button>
+                
+                <Button x:Name="CloseButt" Canvas.Left="510" Width="25" Height="25" Cursor="Hand" Click="CloseButt_Click">
+                    <Image Height="25" Width="25" Source="Data/MainWindowImages/Close_butt.png"/>
+                </Button>
             </Canvas>
             <Canvas x:Name="BottomPanel" Height="42" VerticalAlignment="Top" DockPanel.Dock="Bottom" Margin="0">
                 <Canvas.Background>

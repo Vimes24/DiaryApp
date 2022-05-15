@@ -94,7 +94,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Data\Other\calander.png" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Data\Pictures\1.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -120,6 +122,20 @@
     <None Include="Data\Pictures\8.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\MainWindowImages\about.png" />
+    <Resource Include="Data\MainWindowImages\add_memo.png" />
+    <Resource Include="Data\MainWindowImages\search_memo.png" />
+    <Resource Include="Data\MainWindowImages\settings.png" />
+    <Resource Include="Data\MainWindowImages\tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\MainWindowImages\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\MainWindowImages\Close_butt.png" />
+    <Resource Include="Data\MainWindowImages\Minimize_butt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

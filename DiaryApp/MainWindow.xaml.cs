@@ -46,7 +46,7 @@ namespace DiaryApp
             DiaryApp.Properties.Settings.Default.Save();
         }
 
-        // Wczytuje ostatnio zapisana tapete i uruchamia zegar
+        // Wczytuje ostatnio zapisana tapete, uruchamia zegar i aktualizuje kalendarz
         private void StartWindow_Loaded(object sender, RoutedEventArgs e)
         {
             int fileIndex = DiaryApp.Properties.Settings.Default.LastImage;
@@ -57,11 +57,88 @@ namespace DiaryApp
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Tick += TimeUpdate;
             timer.Start();
+            // aktualizacja kalendarza
+            this.YearLabel.Content = DateTime.Now.Year.ToString();
+            int monthNumber = DateTime.Now.Month;
+            if(monthNumber == 1)
+            {
+                this.MonthLabel.Content = "January";
+            }
+            if (monthNumber == 2)
+            {
+                this.MonthLabel.Content = "February";
+            }
+            if (monthNumber == 3)
+            {
+                this.MonthLabel.Content = "March";
+            }
+            if (monthNumber == 4)
+            {
+                this.MonthLabel.Content = "April";
+            }
+            if (monthNumber == 5)
+            {
+                this.MonthLabel.Content = "May";
+            }
+            if (monthNumber == 6)
+            {
+                this.MonthLabel.Content = "June";
+            }
+            if (monthNumber == 7)
+            {
+                this.MonthLabel.Content = "July";
+            }
+            if (monthNumber == 8)
+            {
+                this.MonthLabel.Content = "August";
+            }
+            if (monthNumber == 9)
+            {
+                this.MonthLabel.Content = "September";
+            }
+            if (monthNumber == 10)
+            {
+                this.MonthLabel.Content = "October";
+            }
+            if (monthNumber == 11)
+            {
+                this.MonthLabel.Content = "November";
+            }
+            if (monthNumber == 12)
+            {
+                this.MonthLabel.Content = "December";
+            }
+
+            this.DayNumberLabel.Content = DateTime.Now.Day.ToString();
+            this.DayNameLabel.Content = DateTime.Now.DayOfWeek.ToString();
         }
         // zawartosc etykiety zostala przypisana do aktualnego czasu komputera
         private void TimeUpdate(object sender, EventArgs e)
         {
             this.TimeLabel.Content = DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void MinButt_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        private void CloseButt_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result;
+            result = MessageBox.Show("Do you want to exit?", "Alert!", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+            if (result == MessageBoxResult.OK)
+            {
+                this.Close();
+            }
+        }
+        
+        // Ustawienie przyciskow z prawej strony wraz ze zmiana rozmiaru okna
+        private void StartWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            Canvas.SetLeft(MinButt, TopPanel.ActualWidth - 60);
+            Canvas.SetLeft(CloseButt, TopPanel.ActualWidth - 30);
+
         }
     }
 }
