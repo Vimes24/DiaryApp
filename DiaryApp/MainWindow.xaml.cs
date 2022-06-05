@@ -147,5 +147,12 @@ namespace DiaryApp
             DiaryApp.UserWindow userWindow = new UserWindow();
             userWindow.Show();
         }
+
+        private void aboutMeButt_Click(object sender, RoutedEventArgs e)
+        {
+            DiaryApp.AboutWindow aboutWin = new AboutWindow();
+            aboutWin.Topmost = true;
+            aboutWin.ShowDialog();
+        }
     }
 }
