@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
 
 namespace DiaryApp
@@ -44,64 +35,79 @@ namespace DiaryApp
         // Wczytuje ostatnio zapisana tapete, uruchamia zegar i aktualizuje kalendarz
         private void StartWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            int fileIndex = DiaryApp.Properties.Settings.Default.LastImage;
-            this.ImageComboBox.SelectedIndex = fileIndex;
-            // Uruchamianie zegara w aplikacji, czas zmienia sie co 1s
-            this.TimeLabel.Content = "...";
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, 1);
-            timer.Tick += TimeUpdate;
-            timer.Start();
-            // aktualizacja kalendarza
-            this.YearLabel.Content = DateTime.Now.Year.ToString();
-            int monthNumber = DateTime.Now.Month;
-            if(monthNumber == 1)
+
+            // uruchomienie okna logowania
+            DiaryApp.LoginWindow logWin = new LoginWindow();
+            logWin.Topmost = true;
+            logWin.ShowDialog();
+            // 
+            if (logWin.DialogResult == false)
             {
-                this.MonthLabel.Content = "January";
+                MessageBox.Show("Thanks for using the application!");
+                this.Close();
             }
-            if (monthNumber == 2)
+
+            if (logWin.DialogResult == true)
             {
-                this.MonthLabel.Content = "February";
-            }
-            if (monthNumber == 3)
-            {
-                this.MonthLabel.Content = "March";
-            }
-            if (monthNumber == 4)
-            {
-                this.MonthLabel.Content = "April";
-            }
-            if (monthNumber == 5)
-            {
-                this.MonthLabel.Content = "May";
-            }
-            if (monthNumber == 6)
-            {
-                this.MonthLabel.Content = "June";
-            }
-            if (monthNumber == 7)
-            {
-                this.MonthLabel.Content = "July";
-            }
-            if (monthNumber == 8)
-            {
-                this.MonthLabel.Content = "August";
-            }
-            if (monthNumber == 9)
-            {
-                this.MonthLabel.Content = "September";
-            }
-            if (monthNumber == 10)
-            {
-                this.MonthLabel.Content = "October";
-            }
-            if (monthNumber == 11)
-            {
-                this.MonthLabel.Content = "November";
-            }
-            if (monthNumber == 12)
-            {
-                this.MonthLabel.Content = "December";
+                int fileIndex = DiaryApp.Properties.Settings.Default.LastImage;
+                this.ImageComboBox.SelectedIndex = fileIndex;
+                // Uruchamianie zegara w aplikacji, czas zmienia sie co 1s
+                this.TimeLabel.Content = "...";
+                DispatcherTimer timer = new DispatcherTimer();
+                timer.Interval = new TimeSpan(0, 0, 1);
+                timer.Tick += TimeUpdate;
+                timer.Start();
+                // aktualizacja kalendarza
+                this.YearLabel.Content = DateTime.Now.Year.ToString();
+                int monthNumber = DateTime.Now.Month;
+                if (monthNumber == 1)
+                {
+                    this.MonthLabel.Content = "January";
+                }
+                if (monthNumber == 2)
+                {
+                    this.MonthLabel.Content = "February";
+                }
+                if (monthNumber == 3)
+                {
+                    this.MonthLabel.Content = "March";
+                }
+                if (monthNumber == 4)
+                {
+                    this.MonthLabel.Content = "April";
+                }
+                if (monthNumber == 5)
+                {
+                    this.MonthLabel.Content = "May";
+                }
+                if (monthNumber == 6)
+                {
+                    this.MonthLabel.Content = "June";
+                }
+                if (monthNumber == 7)
+                {
+                    this.MonthLabel.Content = "July";
+                }
+                if (monthNumber == 8)
+                {
+                    this.MonthLabel.Content = "August";
+                }
+                if (monthNumber == 9)
+                {
+                    this.MonthLabel.Content = "September";
+                }
+                if (monthNumber == 10)
+                {
+                    this.MonthLabel.Content = "October";
+                }
+                if (monthNumber == 11)
+                {
+                    this.MonthLabel.Content = "November";
+                }
+                if (monthNumber == 12)
+                {
+                    this.MonthLabel.Content = "December";
+                }
             }
 
             this.DayNumberLabel.Content = DateTime.Now.Day.ToString();

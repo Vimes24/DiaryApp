@@ -61,7 +61,7 @@ namespace DiaryApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Admin2")]
         public string User2Name {
             get {
                 return ((string)(this["User2Name"]));
@@ -85,7 +85,7 @@ namespace DiaryApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Admin3")]
         public string User3Name {
             get {
                 return ((string)(this["User3Name"]));

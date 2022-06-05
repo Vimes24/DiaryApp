@@ -1,17 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Microsoft.Win32;
 
 namespace DiaryApp
@@ -62,7 +53,7 @@ namespace DiaryApp
             bmUserImage.UriSource = userImageUri;
             bmUserImage.EndInit();
 
-            UserImage.Source = bmUserImage;
+            this.UserImage.Source = bmUserImage;
         }
 
         // Zmiana danych uzytkownikow
@@ -124,7 +115,7 @@ namespace DiaryApp
         private void SelectImageButt_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
-            openFile.Filter = "JPG files | *.jpg | PNG files | *.png";
+            openFile.Filter = "JPG files|*.jpg|PNG files|*.png";
             openFile.Title = "Select the user image";
             openFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
             openFile.ShowDialog();

@@ -12,13 +12,13 @@
       <Value Profile="(Default)">12345</Value>
     </Setting>
     <Setting Name="User2Name" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Admin2</Value>
     </Setting>
     <Setting Name="User2Pass" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="User3Name" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Admin3</Value>
     </Setting>
     <Setting Name="User3Pass" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
