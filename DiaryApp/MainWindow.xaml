@@ -35,7 +35,7 @@
                     <SolidColorBrush Color="#FFBCEAB1" Opacity="0.35"/>
                 </Canvas.Background>
                 <Menu x:Name="MemoButt" Height="55" Canvas.Left="5" Width="80" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Height="55" Width="80" Cursor="Hand">
+                    <MenuItem x:Name="addMemoButt" Height="55" Width="80" Cursor="Hand" Click="addMemoButt_Click">
                         <MenuItem.Header>
                             <StackPanel Height="42" Width="65" HorizontalAlignment="Center">
                                 <Image Source="Data/MainWindowImages/add_memo.png" Height="21" Margin="0"/>

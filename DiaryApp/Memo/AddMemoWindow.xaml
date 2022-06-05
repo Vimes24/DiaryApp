@@ -1,0 +1,84 @@
+﻿<Window x:Name="AddMemoWind" x:Class="DiaryApp.Memo.AddMemoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DiaryApp.Memo"
+        mc:Ignorable="d"
+        Title="Add Memo" Height="541.4" Width="633.2" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/DiaryApp;component/Data/MainWindowImages/add_memo.png" Loaded="AddMemoWind_Loaded">
+    <Grid>
+        <Border BorderBrush="Black" BorderThickness="1" Height="60" Margin="0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="627">
+            <Canvas Margin="0.2,0.2,-0.6,0.2">
+                <Button x:Name="newButt" Content="New Memo F2" Canvas.Left="29" Canvas.Top="10" Width="115" Height="38" FontSize="14" Click="newButt_Click"/>
+                <Button x:Name="saveButt" Content="Save F5" Canvas.Left="179" Canvas.Top="10" Width="115" Height="38" FontSize="14" Click="saveButt_Click"/>
+            </Canvas>
+        </Border>
+        <GroupBox x:Name="detailsGroupBox" Header="Memo Details" HorizontalAlignment="Left" Height="437" Margin="10,65,0,0" VerticalAlignment="Top" Width="607">
+            <Canvas Margin="0,0,-1.8,-13">
+                <Label Content="Memo ID" Canvas.Left="49" Canvas.Top="18"/>
+                <Label Content="Memo Title" Canvas.Left="49" Canvas.Top="48"/>
+                <Label Content="Memo Date" Canvas.Left="49" Canvas.Top="79"/>
+                <TextBox x:Name="memoIDTbx" Height="22" Canvas.Left="149" TextWrapping="Wrap" Canvas.Top="22" Width="90" IsReadOnly="True" Background="#FFDDDDDD" Text="0"/>
+                <TextBox x:Name="memoTitleTbx" Height="24" Canvas.Left="149" TextWrapping="Wrap" Canvas.Top="50" Width="380"/>
+                <DatePicker x:Name="datePicker" Canvas.Left="149" Canvas.Top="82" Width="380"/>
+                <Border BorderBrush="Black" BorderThickness="1" Height="40" Canvas.Left="10" Canvas.Top="119" Width="577">
+                    <Canvas>
+                        <Button x:Name="allignLeftButt" Cursor="Hand" Canvas.Left="4" Canvas.Top="6" Width="22" Height="22" Click="allignLeftButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/text_align_left-16.png"/>
+                        </Button>
+                        <Button x:Name="allignCenterButt" Cursor="Hand" Canvas.Left="31" Canvas.Top="6" Width="22" Height="22" Click="allignCenterButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/text_align_center-16.png"/>
+                        </Button>
+                        <Button x:Name="allignRightButt" Cursor="Hand" Canvas.Left="58" Canvas.Top="6" Width="22" Height="22" Click="allignRightButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/text_align_right-16.png"/>
+                        </Button>
+                        <Button x:Name="incIndentButt" Cursor="Hand" Canvas.Left="83" Canvas.Top="6" Width="22" Height="22" Click="incIndentButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/indent-increase-16.png"/>
+                        </Button>
+                        <Button x:Name="decIndentButt" Cursor="Hand" Canvas.Left="110" Canvas.Top="6" Width="22" Height="22" Click="decIndentButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/indent-decrease-16.png"/>
+                        </Button>
+                        <Button x:Name="boldButt" Cursor="Hand" Canvas.Left="135" Canvas.Top="6" Width="22" Height="22" Click="boldButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/bold.png"/>
+                        </Button>
+                        <Button x:Name="italicButt" Cursor="Hand" Canvas.Left="160" Canvas.Top="6" Width="22" Height="22" Click="italicButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/Italic.png"/>
+                        </Button>
+                        <Button x:Name="underlineButt" Cursor="Hand" Canvas.Left="186" Canvas.Top="6" Width="22" Height="22" Click="underlineButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/underline.png"/>
+                        </Button>
+                        <Button x:Name="incSizeButt" Cursor="Hand" Canvas.Left="212" Canvas.Top="6" Width="22" Height="22" Click="incSizeButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/Increase Font.png"/>
+                        </Button>
+                        <Button x:Name="decSizeButt" Cursor="Hand" Canvas.Left="239" Canvas.Top="6" Width="22" Height="22" Click="decSizeButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/Decrease Font-.png"/>
+                        </Button>
+                        <Button x:Name="cutButt" Cursor="Hand" Canvas.Left="268" Canvas.Top="6" Width="22" Height="22" Click="cutButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/cut.png"/>
+                        </Button>
+                        <Button x:Name="copyButt" Cursor="Hand" Canvas.Left="295" Canvas.Top="6" Width="22" Height="22" Click="copyButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/ic_content_copy_48px-16.png"/>
+                        </Button>
+                        <Button x:Name="pasteButt" Cursor="Hand" Canvas.Left="322" Canvas.Top="6" Width="22" Height="22" Click="pasteButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/content-paste-16.png"/>
+                        </Button>
+                        <Button x:Name="undoButt" Cursor="Hand" Canvas.Left="349" Canvas.Top="6" Width="22" Height="22" Click="undoButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/Undo-2-16.png"/>
+                        </Button>
+                        <Button x:Name="redoButt" Cursor="Hand" Canvas.Left="376" Canvas.Top="6" Width="22" Height="22" Click="redoButt_Click">
+                            <Image Height="16" Width="16" Source="/DiaryApp;component/Data/Pictures/TextImages/Redo-2-16.png"/>
+                        </Button>
+                    </Canvas>
+                </Border>
+                <RichTextBox x:Name="rtc" Height="253" Canvas.Left="10" Canvas.Top="164" Width="577" AcceptsTab="True">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text="RichTextBox"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
+            </Canvas>
+        </GroupBox>
+
+    </Grid>
+</Window>

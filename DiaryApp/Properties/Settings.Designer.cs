@@ -106,5 +106,17 @@ namespace DiaryApp.Properties {
                 this["User3Pass"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public long LastID {
+            get {
+                return ((long)(this["LastID"]));
+            }
+            set {
+                this["LastID"] = value;
+            }
+        }
     }
 }

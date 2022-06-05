@@ -154,5 +154,11 @@ namespace DiaryApp
             aboutWin.Topmost = true;
             aboutWin.ShowDialog();
         }
+
+        private void addMemoButt_Click(object sender, RoutedEventArgs e)
+        {
+            DiaryApp.Memo.AddMemoWindow addMemo = new Memo.AddMemoWindow();
+            addMemo.Show();
+        }
     }
 }

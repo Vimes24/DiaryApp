@@ -61,6 +61,9 @@
     <Compile Include="LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Memo\AddMemoWindow.xaml.cs">
+      <DependentUpon>AddMemoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Memo\AddMemoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +183,29 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\Other\exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\Pictures\TextImages\bold.png" />
+    <Resource Include="Data\Pictures\TextImages\content-paste-16.png" />
+    <Resource Include="Data\Pictures\TextImages\cut.png" />
+    <Resource Include="Data\Pictures\TextImages\Decrease Font-.png" />
+    <Resource Include="Data\Pictures\TextImages\ic_content_copy_48px-16.png" />
+    <Resource Include="Data\Pictures\TextImages\Increase Font.png" />
+    <Resource Include="Data\Pictures\TextImages\indent-decrease-16.png" />
+    <Resource Include="Data\Pictures\TextImages\indent-increase-16.png" />
+    <Resource Include="Data\Pictures\TextImages\Italic.png" />
+    <Resource Include="Data\Pictures\TextImages\Redo-2-16.png" />
+    <Resource Include="Data\Pictures\TextImages\text_align_center-16.png" />
+    <Resource Include="Data\Pictures\TextImages\text_align_left-16.png" />
+    <Resource Include="Data\Pictures\TextImages\text_align_right-16.png" />
+    <Resource Include="Data\Pictures\TextImages\underline.png" />
+    <Resource Include="Data\Pictures\TextImages\Undo-2-16.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Data\Docs\1.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
