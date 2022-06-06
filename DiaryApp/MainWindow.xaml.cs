@@ -160,5 +160,11 @@ namespace DiaryApp
             DiaryApp.Memo.AddMemoWindow addMemo = new Memo.AddMemoWindow();
             addMemo.Show();
         }
+
+        private void searchButt_Click(object sender, RoutedEventArgs e)
+        {
+            DiaryApp.Memo.SearchMemoWindow searchMemo = new Memo.SearchMemoWindow();
+            searchMemo.Show();
+        }
     }
 }

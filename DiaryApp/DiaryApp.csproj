@@ -64,6 +64,9 @@
     <Compile Include="Memo\AddMemoWindow.xaml.cs">
       <DependentUpon>AddMemoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Memo\SearchMemoWindow.xaml.cs">
+      <DependentUpon>SearchMemoWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
@@ -88,6 +91,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Memo\AddMemoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Memo\SearchMemoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
