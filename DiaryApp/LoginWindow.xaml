@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiaryApp"
         mc:Ignorable="d"
-        Title="Login to Application" Height="386.4" Width="348.2" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="LoginWind_Loaded">
+        Title="Login to Application" Height="386.4" Width="348.2" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="LoginWind_Loaded" Icon="Data/MainWindowImages/tools.png">
     <Grid>
         <GroupBox Header="User Info" HorizontalAlignment="Left" Height="265" Margin="25,30,0,0" VerticalAlignment="Top" Width="295">
             <Canvas Margin="0,0,0.2,0.2" >

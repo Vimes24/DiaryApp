@@ -9,19 +9,19 @@
       <Value Profile="(Default)">Admin</Value>
     </Setting>
     <Setting Name="User1Pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">12345</Value>
+      <Value Profile="(Default)">111</Value>
     </Setting>
     <Setting Name="User2Name" Type="System.String" Scope="User">
       <Value Profile="(Default)">Admin2</Value>
     </Setting>
     <Setting Name="User2Pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">111</Value>
     </Setting>
     <Setting Name="User3Name" Type="System.String" Scope="User">
       <Value Profile="(Default)">Admin3</Value>
     </Setting>
     <Setting Name="User3Pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">111</Value>
     </Setting>
     <Setting Name="LastID" Type="System.Int64" Scope="User">
       <Value Profile="(Default)">0</Value>

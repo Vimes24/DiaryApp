@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>notepad_64.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -208,7 +211,9 @@
     <Resource Include="Data\Pictures\TextImages\underline.png" />
     <Resource Include="Data\Pictures\TextImages\Undo-2-16.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="notepad_64.ico" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Data\Docs\1.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

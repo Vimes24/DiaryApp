@@ -49,7 +49,7 @@ namespace DiaryApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("12345")]
+        [global::System.Configuration.DefaultSettingValueAttribute("111")]
         public string User1Pass {
             get {
                 return ((string)(this["User1Pass"]));
@@ -73,7 +73,7 @@ namespace DiaryApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("111")]
         public string User2Pass {
             get {
                 return ((string)(this["User2Pass"]));
@@ -97,7 +97,7 @@ namespace DiaryApp.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("111")]
         public string User3Pass {
             get {
                 return ((string)(this["User3Pass"]));

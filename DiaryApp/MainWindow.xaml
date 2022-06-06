@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiaryApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="443.2" Width="723.15" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="StartWindow_Loaded" WindowState="Maximized" SizeChanged="StartWindow_SizeChanged">
+        Title="MainWindow" Height="648.1" Width="723.15" WindowStartupLocation="CenterScreen" WindowStyle="None" Loaded="StartWindow_Loaded" WindowState="Maximized" SizeChanged="StartWindow_SizeChanged" KeyDown="StartWindow_KeyDown">
     <Window.Background>
         <ImageBrush ImageSource="pack://siteoforigin:,,,/Data/Pictures/1.jpg"/>
     </Window.Background>
@@ -20,7 +20,7 @@
                         <Label x:Name="TimeLabel" Content="15:30" Canvas.Top="41" Height="55" Width="117" Background="Black" Foreground="#FFF4800B" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="28" Canvas.Left="11"/>
                     </Canvas>
                 </Border>
-                <Canvas x:Name="CalendarPanel" Height="155" Canvas.Left="10" Canvas.Top="170" Width="160">
+                <Canvas x:Name="CalendarPanel" Height="155" Canvas.Left="10" Canvas.Top="235" Width="160">
                     <Canvas.Background>
                         <ImageBrush ImageSource="Data/Other/calander.png"/>
                     </Canvas.Background>
@@ -29,6 +29,12 @@
                     <Label x:Name="DayNumberLabel" Content="12" Canvas.Left="25" Canvas.Top="65" Width="105" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="26"/>
                     <Label x:Name="DayNameLabel" Content="Monday" Canvas.Top="110" FontSize="14" Foreground="Black" FontWeight="Bold" Height="30" Canvas.Left="25" Width="105" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 </Canvas>
+                <Border BorderBrush="Black" BorderThickness="1" Height="162" Canvas.Left="15" Canvas.Top="470" Width="150" CornerRadius="10">
+                    <Canvas>
+                        <Image x:Name="loginUserImage" Height="109" Canvas.Left="10" Canvas.Top="10" Width="129" Source="pack://siteoforigin:,,,/Data/Docs/1.jpg" Stretch="Fill"/>
+                        <Label x:Name="loginUserLbl" Content="..." Canvas.Left="10" Canvas.Top="124" Width="129" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="16"/>
+                    </Canvas>
+                </Border>
             </Canvas>
             <Canvas x:Name="TopPanel" Height="65" VerticalAlignment="Top" Margin="0.2,0,0,0" DockPanel.Dock="Top">
                 <Canvas.Background>
@@ -55,14 +61,14 @@
                     </MenuItem>
                 </Menu>
                 <Menu x:Name="SettingsButt" Height="55" Canvas.Left="180" Width="85" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Height="55" Width="86" Cursor="Hand">
+                    <MenuItem x:Name="settingsMainMenu" Height="55" Width="86" Cursor="Hand">
                         <MenuItem.Header>
                             <StackPanel Height="43" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Image Source="Data/MainWindowImages/settings.png" Height="23" Margin="0,0,2.4,0"/>
                                 <Label Content="Settings F4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="9" Margin="-8,0,-8.6,0"/>
                             </StackPanel>
                         </MenuItem.Header>
-                        <MenuItem Header="Settings" Height="21" Margin="-1,0,-0.2,0" FontSize="9">
+                        <MenuItem x:Name="settingsSubMenu" Header="Settings" Height="21" Margin="-1,0,-0.2,0" FontSize="9">
                             <MenuItem.Icon>
                                 <Image Source="Data/MainWindowImages/settings.png" Margin="-2,-1,-6,-1" />
                             </MenuItem.Icon>
@@ -70,7 +76,7 @@
                     </MenuItem>
                 </Menu>
                 <Menu x:Name="ToolsButt" Height="55" Canvas.Left="270" Width="85" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Height="55" Width="86" Cursor="Hand">
+                    <MenuItem x:Name="toolsMainMenu" Height="55" Width="86" Cursor="Hand">
                         <MenuItem.Header>
                             <StackPanel Height="43" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Image Source="Data/MainWindowImages/tools.png" Height="23" Margin="0,0,2.4,0"/>
@@ -85,7 +91,7 @@
                     </MenuItem>
                 </Menu>
                 <Menu x:Name="InfoButt" Height="55" Canvas.Left="360" Width="85" Canvas.Top="5" BorderBrush="Black" BorderThickness="1">
-                    <MenuItem Height="55" Width="86" Cursor="Hand">
+                    <MenuItem x:Name="aboutMainMenu" Height="55" Width="86" Cursor="Hand">
                         <MenuItem.Header>
                             <StackPanel Height="43" Width="70" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Image Source="Data/MainWindowImages/about.png" Height="23" Margin="0,0,2.4,0"/>
@@ -107,7 +113,7 @@
                 <Button x:Name="MinButt" Canvas.Left="480" Width="25" Height="25" Cursor="Hand" Click="MinButt_Click">
                     <Image Height="25" Width="25" Source="Data/MainWindowImages/Minimize_butt.png"/>
                 </Button>
-                
+
                 <Button x:Name="CloseButt" Canvas.Left="510" Width="25" Height="25" Cursor="Hand" Click="CloseButt_Click">
                     <Image Height="25" Width="25" Source="Data/MainWindowImages/Close_butt.png"/>
                 </Button>

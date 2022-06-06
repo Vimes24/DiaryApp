@@ -27,16 +27,23 @@ namespace DiaryApp
         // Wczytywanie danych wersji aplikacji
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            System.Diagnostics.FileVersionInfo fileVersion;
-            string fileName = Environment.CurrentDirectory + "\\DiaryApp.exe";
-            fileVersion = System.Diagnostics.FileVersionInfo.GetVersionInfo(fileName);
+            try
+            {
+                System.Diagnostics.FileVersionInfo fileVersion;
+                string fileName = Environment.CurrentDirectory + "\\DiaryApp.exe";
+                fileVersion = System.Diagnostics.FileVersionInfo.GetVersionInfo(fileName);
 
-            this.companyLbl.Content = fileVersion.CompanyName;
-            this.productLbl.Content = fileVersion.ProductName;
-            this.versionLbl.Content = fileVersion.FileVersion;
-            this.webLbl.Content = fileVersion.Comments;
-            this.trademarkLbl.Content = fileVersion.LegalTrademarks;
-            this.copyrightLbl.Content = fileVersion.LegalCopyright;
+                this.companyLbl.Content = fileVersion.CompanyName;
+                this.productLbl.Content = fileVersion.ProductName;
+                this.versionLbl.Content = fileVersion.FileVersion;
+                this.webLbl.Content = fileVersion.Comments;
+                this.trademarkLbl.Content = fileVersion.LegalTrademarks;
+                this.copyrightLbl.Content = fileVersion.LegalCopyright;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
     }
 }

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DiaryApp.Memo"
         mc:Ignorable="d"
-        Title="Search Memo" Height="506.4" Width="848.2" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="SearchMemoWind_Loaded">
+        Title="Search Memo" Height="506.4" Width="848.2" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="SearchMemoWind_Loaded" Icon="/DiaryApp;component/Data/MainWindowImages/search_memo.png">
     <Grid>
         <GroupBox Header="Search" HorizontalAlignment="Left" Height="435" Margin="10,25,0,0" VerticalAlignment="Top" Width="210">
             <Canvas>

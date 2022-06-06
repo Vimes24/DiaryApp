@@ -33,36 +33,42 @@ namespace DiaryApp
 
         private void OkButt_Click(object sender, RoutedEventArgs e)
         {
-            //logika interakcji z hasłem użytkownika
-            if (this.UserPassBox.Password == "")
+            try
             {
-                MessageBox.Show("Please enter the password!");
-                return;
-            }
+                //logika interakcji z hasłem użytkownika
+                if (this.UserPassBox.Password == "")
+                {
+                    MessageBox.Show("Please enter the password!");
+                    return;
+                }
 
-            string orgPass = "";
-            if (UserCombo.SelectedIndex == 0)
+                string orgPass = "";
+                if (UserCombo.SelectedIndex == 0)
+                {
+                    orgPass = DiaryApp.Properties.Settings.Default.User1Pass;
+                }
+
+                if (UserCombo.SelectedIndex == 1)
+                {
+                    orgPass = DiaryApp.Properties.Settings.Default.User2Pass;
+                }
+
+                if (UserCombo.SelectedIndex == 2)
+                {
+                    orgPass = DiaryApp.Properties.Settings.Default.User3Pass;
+                }
+
+                if (this.UserPassBox.Password != orgPass)
+                {
+                    MessageBox.Show("Wrong password!");
+                    return;
+                }
+                this.DialogResult = true;
+            }
+            catch (Exception ex)
             {
-                orgPass = DiaryApp.Properties.Settings.Default.User1Pass;
+                MessageBox.Show("Error: " + ex.Message);
             }
-
-            if (UserCombo.SelectedIndex == 1)
-            {
-                orgPass = DiaryApp.Properties.Settings.Default.User2Pass;
-            }
-
-            if (UserCombo.SelectedIndex == 2)
-            {
-                orgPass = DiaryApp.Properties.Settings.Default.User3Pass;
-            }
-
-            if (this.UserPassBox.Password != orgPass)
-            {
-                MessageBox.Show("Wrong password!");
-                return;
-            }
-
-            this.DialogResult = true;
         }
 
         private void LoginWind_Loaded(object sender, RoutedEventArgs e)
@@ -78,22 +84,30 @@ namespace DiaryApp
         // ustawia zdjęcie użytkownika wybranego z listy rozwijanej
         private void UserCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            String userImageName = Environment.CurrentDirectory + "\\Data\\Pictures\\Users\\" + this.UserCombo.SelectedIndex.ToString() + ".jpg";
-
-            if (File.Exists(userImageName) == false)
+            try
             {
-                return;
+                String userImageName = Environment.CurrentDirectory + "\\Data\\Pictures\\Users\\" + this.UserCombo.SelectedIndex.ToString() + ".jpg";
+
+                if (File.Exists(userImageName) == false)
+                {
+                    return;
+                }
+                Uri userImageUri = new Uri(userImageName);
+
+                // Ustawienie wybranego obrazu uzytkownika
+                BitmapImage bmUserImage = new BitmapImage();
+                bmUserImage.BeginInit();
+                bmUserImage.CacheOption = BitmapCacheOption.OnLoad;
+                bmUserImage.UriSource = userImageUri;
+                bmUserImage.EndInit();
+
+                this.UserImage.Source = bmUserImage;
             }
-            Uri userImageUri = new Uri(userImageName);
-
-            // Ustawienie wybranego obrazu uzytkownika
-            BitmapImage bmUserImage = new BitmapImage();
-            bmUserImage.BeginInit();
-            bmUserImage.CacheOption = BitmapCacheOption.OnLoad;
-            bmUserImage.UriSource = userImageUri;
-            bmUserImage.EndInit();
-
-            this.UserImage.Source = bmUserImage;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            
         }
     }
 }
