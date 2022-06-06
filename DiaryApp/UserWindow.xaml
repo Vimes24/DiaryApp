@@ -11,7 +11,7 @@
             <Canvas Margin="0,0,0.2,0.2" >
                 <Button x:Name="SelectImageButt" Content="Select Image" Canvas.Left="104" Canvas.Top="134" Width="75" Cursor="Hand" Click="SelectImageButt_Click"/>
                 <Border BorderBrush="Black" BorderThickness="1" Height="120" Canvas.Left="79" Canvas.Top="4" Width="120" CornerRadius="2">
-                    <Image x:Name="UserImage" />
+                    <Image x:Name="UserImage" Stretch="Fill" />
                 </Border>
                 <Label Content="User Name:" Canvas.Left="44" Canvas.Top="198" Height="25" Width="70"/>
                 <Label Content="Password:" Canvas.Left="53" Canvas.Top="227"/>

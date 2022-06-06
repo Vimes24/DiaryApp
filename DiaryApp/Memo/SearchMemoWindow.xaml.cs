@@ -107,7 +107,7 @@ namespace DiaryApp.Memo
                     ListBoxItem item = new ListBoxItem();
                     item.Tag = i;
                     titleFileName = Environment.CurrentDirectory + "\\Data\\Docs\\Memo_title_" + i.ToString() + ".txt";
-                    // Sprawdza czy plik istnieje, jeżeli taK to dodaje do okna
+                    // Sprawdza czy plik istnieje, jeżeli tak to dodaje do okna
                     if (System.IO.File.Exists(titleFileName) == true)
                     {
                         item.Content = System.IO.File.ReadAllText(titleFileName, Encoding.UTF8);
@@ -118,7 +118,6 @@ namespace DiaryApp.Memo
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
@@ -161,16 +160,16 @@ namespace DiaryApp.Memo
         {
             try
             {
+                // Czyszczenie wyświetlanych danych
+                this.MemoListBox.SelectedIndex = -1;
+                this.memoIDTbx.Text = "";
+                this.memoTitleTbx.Text = "";
+                this.datePicker.Text = "";
+                this.rtc.Document.Blocks.Clear(); 
                 ListBoxItem li = new ListBoxItem();
-                for (int i = 0; i < this.MemoListBox.Items.Count - 1; i++)
-                {
-                    // Czyszczenie wyświetlanych danych
-                    this.MemoListBox.SelectedIndex = -1;
-                    this.memoIDTbx.Text = "";
-                    this.memoTitleTbx.Text = "";
-                    this.datePicker.Text = "";
-                    this.rtc.Document.Blocks.Clear();
 
+                for (int i = 0; i < this.MemoListBox.Items.Count; i++)
+                {
                     li = (ListBoxItem)this.MemoListBox.Items[i];
                     // Zmienia każdorazowo kolor przy kolejnych wyszukiwaniach
                     li.Background = Brushes.White;

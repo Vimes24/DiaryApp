@@ -71,11 +71,7 @@
                     </Canvas>
                 </Border>
                 <RichTextBox x:Name="rtc" Height="253" Canvas.Left="10" Canvas.Top="164" Width="577" AcceptsTab="True">
-                    <FlowDocument>
-                        <Paragraph>
-                            <Run Text="RichTextBox"/>
-                        </Paragraph>
-                    </FlowDocument>
+                    <FlowDocument/>
                 </RichTextBox>
             </Canvas>
         </GroupBox>

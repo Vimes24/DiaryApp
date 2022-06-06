@@ -17,6 +17,12 @@ namespace DiaryApp
             InitializeComponent();
         }
 
+        // Ustawienie domyslnego uzytkownika nr 1
+        private void UsersWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.UserCombo.SelectedIndex = 0;
+        }
+
         // Wczytuje dane uzytkownikow po wyborze z listy rozwijanej + wybiea zdjecie ktore ustawil uzytkownik
         private void UserCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -136,13 +142,13 @@ namespace DiaryApp
                 openFile.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
                 openFile.ShowDialog();
 
-                if (openFile.Title == "")
+                if (openFile.FileName == "")
                 {
                     return;
                 }
 
                 String userImageName;
-                userImageName = openFile.Title;
+                userImageName = openFile.FileName;
                 Uri userImageUri = new Uri(userImageName);
 
                 // Ustawienie wybranego obrazu i jego linku - podstawienie zdjecia uzytkownika
@@ -158,12 +164,6 @@ namespace DiaryApp
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
-        }
-
-        // Ustawienie domyslnego uzytkownika nr 1
-        private void UsersWindow_Loaded(object sender, RoutedEventArgs e)
-        {
-            this.UserCombo.SelectedIndex = 0;
         }
     }
 }

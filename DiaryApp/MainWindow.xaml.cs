@@ -69,6 +69,9 @@ namespace DiaryApp
                     timer.Start();
                     // aktualizacja kalendarza
                     this.YearLabel.Content = DateTime.Now.Year.ToString();
+                    this.DayNumberLabel.Content = DateTime.Now.Day.ToString();
+                    this.DayNameLabel.Content = DateTime.Now.DayOfWeek.ToString();
+
                     int monthNumber = DateTime.Now.Month;
                     if (monthNumber == 1)
                     {
@@ -123,9 +126,6 @@ namespace DiaryApp
                     this.loginUserImage.Source = logWin.UserImage.Source;
                     this.loginUserLbl.Content = logWin.UserCombo.Text;
                 }
-
-                this.DayNumberLabel.Content = DateTime.Now.Day.ToString();
-                this.DayNameLabel.Content = DateTime.Now.DayOfWeek.ToString();
             }
             catch (Exception ex)
             {
