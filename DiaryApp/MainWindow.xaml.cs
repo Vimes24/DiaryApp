@@ -18,9 +18,13 @@ namespace DiaryApp
             InitializeComponent();
         }
 
-        // Ustawienie zmiany tapety w oknie glownym
-        // Utworzenie String imageName jako dowiazanie do nazwy tapety (+1 bo index zaczynamy od 0)
-        // Uri imageUri - obiekt odnoszacy sie do lokalizacji danej tapety
+        /// <summary>
+        /// Ustawienie zmiany tapety w oknie glownym
+        /// Utworzenie String imageName jako dowiazanie do nazwy tapety (+1 bo index zaczynamy od 0)
+        /// Uri imageUri - obiekt odnoszacy sie do lokalizacji danej tapety
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ImageComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -30,27 +34,30 @@ namespace DiaryApp
                 ImageBrush image = new ImageBrush(new BitmapImage(imageUri));
                 image.Stretch = Stretch.Fill;
                 this.Background = image;
-                // Zapisanie zmian w ustawieniach - ostatnio wybrana tapeta pojawi sie przy kolejnym uruchomieniu aplikacji
+                /// Zapisanie zmian w ustawieniach - ostatnio wybrana tapeta pojawi sie przy kolejnym uruchomieniu aplikacji
                 DiaryApp.Properties.Settings.Default.LastImage = this.ImageComboBox.SelectedIndex;
                 DiaryApp.Properties.Settings.Default.Save();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: " + ex.Message);             
+                MessageBox.Show("Error: " + ex.Message);          
             }
 
         }
-
-        // Wczytuje ostatnio zapisana tapete, uruchamia zegar i aktualizuje kalendarz
+        /// <summary>
+        /// Wczytuje ostatnio zapisana tapete, uruchamia zegar i aktualizuje kalendarz
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartWindow_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
-                // uruchomienie okna logowania
+                /// uruchomienie okna logowania
                 DiaryApp.LoginWindow logWin = new LoginWindow();
                 logWin.Topmost = true;
                 logWin.ShowDialog();
-                // 
+                 
                 if (logWin.DialogResult == false)
                 {
                     MessageBox.Show("Thanks for using the application!");
@@ -61,13 +68,13 @@ namespace DiaryApp
                 {
                     int fileIndex = DiaryApp.Properties.Settings.Default.LastImage;
                     this.ImageComboBox.SelectedIndex = fileIndex;
-                    // Uruchamianie zegara w aplikacji, czas zmienia sie co 1s
+                    /// Uruchamianie zegara w aplikacji, czas zmienia sie co 1s
                     this.TimeLabel.Content = "...";
                     DispatcherTimer timer = new DispatcherTimer();
                     timer.Interval = new TimeSpan(0, 0, 1);
                     timer.Tick += TimeUpdate;
                     timer.Start();
-                    // aktualizacja kalendarza
+                    /// aktualizacja kalendarza
                     this.YearLabel.Content = DateTime.Now.Year.ToString();
                     this.DayNumberLabel.Content = DateTime.Now.Day.ToString();
                     this.DayNameLabel.Content = DateTime.Now.DayOfWeek.ToString();
@@ -122,7 +129,7 @@ namespace DiaryApp
                         this.MonthLabel.Content = "December";
                     }
 
-                    // ładowanie zdjęcia i nazwy użytkownika po zalogowaniu
+                    /// ładowanie zdjęcia i nazwy użytkownika po zalogowaniu
                     this.loginUserImage.Source = logWin.UserImage.Source;
                     this.loginUserLbl.Content = logWin.UserCombo.Text;
                 }
@@ -133,7 +140,7 @@ namespace DiaryApp
             }
 
         }
-        // zawartosc etykiety zostala przypisana do aktualnego czasu komputera
+        /// zawartosc etykiety zostala przypisana do aktualnego czasu komputera
         private void TimeUpdate(object sender, EventArgs e)
         {
             this.TimeLabel.Content = DateTime.Now.ToString("HH:mm:ss");
@@ -144,6 +151,11 @@ namespace DiaryApp
             this.WindowState = WindowState.Minimized;
         }
 
+        /// <summary>
+        /// Zamykanie okna aplikacji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CloseButt_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -161,7 +173,7 @@ namespace DiaryApp
             }
         }
         
-        // Ustawienie przyciskow z prawej strony wraz ze zmiana rozmiaru okna
+        /// Ustawienie przyciskow z prawej strony wraz ze zmiana rozmiaru okna
         private void StartWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             Canvas.SetLeft(MinButt, TopPanel.ActualWidth - 60);
@@ -194,7 +206,11 @@ namespace DiaryApp
             searchMemo.Show();
         }
 
-        // Użycie klawiszy klawiatury do wybierania opcji
+        /// <summary>
+        /// Użycie klawiszy klawiatury do wybierania opcji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void StartWindow_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
         {
             try

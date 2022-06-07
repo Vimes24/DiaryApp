@@ -16,8 +16,11 @@ namespace DiaryApp.Memo
             InitializeComponent();
         }
 
-
-        // Logika interakcji przycisków dla tekstu pisanego w RichTextBox
+        /// <summary>
+        /// Logika interakcji przycisków dla tekstu pisanego w RichTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void allignLeftButt_Click(object sender, RoutedEventArgs e)
         {
             EditingCommands.AlignLeft.Execute(null, this.rtc);
@@ -93,13 +96,21 @@ namespace DiaryApp.Memo
             this.rtc.Redo();
         }
 
-        // ustawia przyciski jako nieaktywne do czasu wyboru nowej notatki
+        /// <summary>
+        /// ustawia przyciski jako nieaktywne do czasu wyboru nowej notatki
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddMemoWind_Loaded(object sender, RoutedEventArgs e)
         {
             this.detailsGroupBox.IsEnabled = false;
         }
 
-        // ustawia przyciski jako aktywne lub nieaktywne, w zależności od wybranego przycisku
+        /// <summary>
+        /// ustawia przyciski jako aktywne lub nieaktywne, w zależności od wybranego przycisku
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void newButt_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -107,11 +118,11 @@ namespace DiaryApp.Memo
                 this.detailsGroupBox.IsEnabled = true;
                 this.newButt.IsEnabled = false;
                 this.saveButt.IsEnabled = true;
-                // czyszczenie tekstu w polach tekstowych i wyborze daty
+                /// czyszczenie tekstu w polach tekstowych i wyborze daty
                 this.memoTitleTbx.Text = "";
                 this.datePicker.SelectedDate = System.DateTime.Now;
                 this.rtc.Document.Blocks.Clear();
-                // Dodawanie kolejnego numeru notatki
+                /// Dodawanie kolejnego numeru notatki
                 long lastID = DiaryApp.Properties.Settings.Default.LastID + 1;
                 this.memoIDTbx.Text = lastID.ToString();
 
@@ -123,6 +134,14 @@ namespace DiaryApp.Memo
             }
         }
 
+        /// <summary>
+        /// zachowanie ostatniego numeru ID w ustawieniach
+        /// zapisywanie notatki w pliku tekstowym (utworzenie trzech oddzielnych plików dla nazwy, daty i treści)
+        /// zapisywanie notatki w pliku tekstowym (tytuł i data)
+        /// zapisywanie notatki w pliku tekstowym (plik rtf)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveButt_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -130,21 +149,18 @@ namespace DiaryApp.Memo
                 this.detailsGroupBox.IsEnabled = false;
                 this.newButt.IsEnabled = true;
                 this.saveButt.IsEnabled = false;
-                // zachowanie ostatniego numeru ID w ustawieniach
+
                 long lastID = DiaryApp.Properties.Settings.Default.LastID + 1;
                 DiaryApp.Properties.Settings.Default.LastID = lastID;
                 DiaryApp.Properties.Settings.Default.Save();
 
-                // zapisywanie notatki w pliku tekstowym (utworzenie trzech oddzielnych plików dla nazwy, daty i treści)
                 string titleFileName = Environment.CurrentDirectory + "\\Data\\Docs\\Memo_title_" + lastID.ToString() + ".txt";
                 string dateFileName = Environment.CurrentDirectory + "\\Data\\Docs\\Memo_date_" + lastID.ToString() + ".txt";
                 string rtfFileName = Environment.CurrentDirectory + "\\Data\\Docs\\Memo_text_" + lastID.ToString() + ".rtf";
 
-                // zapisywanie notatki w pliku tekstowym (tytuł i data)
                 System.IO.File.WriteAllText(titleFileName, this.memoTitleTbx.Text, Encoding.UTF8);
                 System.IO.File.WriteAllText(dateFileName, this.datePicker.Text, Encoding.UTF8);
 
-                // zapisywanie notatki w pliku tekstowym (plik rtf)
                 TextRange tr = new TextRange(this.rtc.Document.ContentStart, this.rtc.Document.ContentEnd);
                 System.IO.FileStream fileStream = new System.IO.FileStream(rtfFileName, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.ReadWrite);
                 tr.Save(fileStream, DataFormats.Rtf);
@@ -157,7 +173,11 @@ namespace DiaryApp.Memo
             }
         }
 
-        // Użycie klawiszy klawiatury do wybierania opcji
+        /// <summary>
+        /// Użycie klawiszy klawiatury do wybierania opcji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddMemoWind_KeyDown(object sender, KeyEventArgs e)
         {
             try

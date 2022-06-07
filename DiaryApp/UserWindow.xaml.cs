@@ -17,13 +17,20 @@ namespace DiaryApp
             InitializeComponent();
         }
 
-        // Ustawienie domyslnego uzytkownika nr 1
+        /// <summary>
+        /// Ustawienie domyslnego uzytkownika nr 1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UsersWindow_Loaded(object sender, RoutedEventArgs e)
         {
             this.UserCombo.SelectedIndex = 0;
         }
-
-        // Wczytuje dane uzytkownikow po wyborze z listy rozwijanej + wybiea zdjecie ktore ustawil uzytkownik
+        /// <summary>
+        /// Wczytuje dane uzytkownikow po wyborze z listy rozwijanej + wybiera zdjecie ktore ustawil uzytkownik
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -53,8 +60,8 @@ namespace DiaryApp
                     return;
                 }
                 Uri userImageUri = new Uri(userImageName);
-
-                // Ustawienie wybranego obrazu uzytkownika
+                
+                /// Ustawienie wybranego obrazu uzytkownika
                 BitmapImage bmUserImage = new BitmapImage();
                 bmUserImage.BeginInit();
                 bmUserImage.CacheOption = BitmapCacheOption.OnLoad;
@@ -69,7 +76,11 @@ namespace DiaryApp
             }
         }
 
-        // Zmiana danych uzytkownikow
+        /// <summary>
+        /// Zmiana danych uzytkownikow
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveUserDataButt_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -132,6 +143,11 @@ namespace DiaryApp
             }
         }
 
+        /// <summary>
+        /// Ustawienie wybranego obrazu i jego linku - podstawienie zdjecia uzytkownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SelectImageButt_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -151,7 +167,6 @@ namespace DiaryApp
                 userImageName = openFile.FileName;
                 Uri userImageUri = new Uri(userImageName);
 
-                // Ustawienie wybranego obrazu i jego linku - podstawienie zdjecia uzytkownika
                 BitmapImage bmUserImage = new BitmapImage();
                 bmUserImage.BeginInit();
                 bmUserImage.CacheOption = BitmapCacheOption.OnLoad;

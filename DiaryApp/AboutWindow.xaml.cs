@@ -13,7 +13,11 @@ namespace DiaryApp
             InitializeComponent();
         }
 
-        // Wczytywanie danych wersji aplikacji
+        /// <summary>
+        /// Wczytywanie danych o aplikacji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             try

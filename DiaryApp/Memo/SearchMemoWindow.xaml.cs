@@ -17,7 +17,11 @@ namespace DiaryApp.Memo
             InitializeComponent();
         }
 
-        // Logika interakcji przycisków dla tekstu pisanego w RichTextBox
+        /// <summary>
+        /// Logika interakcji przycisków dla tekstu pisanego w RichTextBox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void allignLeftButt_Click(object sender, RoutedEventArgs e)
         {
             EditingCommands.AlignLeft.Execute(null, this.rtc);
@@ -93,13 +97,20 @@ namespace DiaryApp.Memo
             this.rtc.Redo();
         }
 
+        /// <summary>
+        /// Czyści listę notatek po zmianach (usuwa nieaktualne)
+        /// Załadowanie notatek do okna wyszukiwania
+        /// Sprawdza czy plik istnieje, jeżeli tak to dodaje do okna
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SearchMemoWind_Loaded(object sender, RoutedEventArgs e)
         {
             try
             {
-                // Czyści listę notatek po zmianach (usuwa nieaktualne)
+
                 this.MemoListBox.Items.Clear();
-                // załadowanie notatek do okna wyszukiwania
+
                 long li = DiaryApp.Properties.Settings.Default.LastID;
                 string titleFileName = "";
                 for (int i = 1; i <= li; i++)
@@ -107,13 +118,12 @@ namespace DiaryApp.Memo
                     ListBoxItem item = new ListBoxItem();
                     item.Tag = i;
                     titleFileName = Environment.CurrentDirectory + "\\Data\\Docs\\Memo_title_" + i.ToString() + ".txt";
-                    // Sprawdza czy plik istnieje, jeżeli tak to dodaje do okna
+
                     if (System.IO.File.Exists(titleFileName) == true)
                     {
                         item.Content = System.IO.File.ReadAllText(titleFileName, Encoding.UTF8);
                         this.MemoListBox.Items.Add(item);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -122,12 +132,16 @@ namespace DiaryApp.Memo
             }
         }
 
-        // Kod do aktualizacji danych w polach informacyjnych w oknie (zmiana każdorazowo przy wyborze kolejnej notatki)
+        /// <summary>
+        /// Kod do aktualizacji danych w polach informacyjnych w oknie (zmiana każdorazowo przy wyborze kolejnej notatki)
+        /// Sprawdza czy index notatki nie jest równy -1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MemoListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
-                // sprawdza czy index notatki nie jest równy -1
                 if (this.MemoListBox.SelectedIndex == -1)
                 {
                     return;
@@ -155,12 +169,17 @@ namespace DiaryApp.Memo
             }
         }
 
-        // Logika wyszukiwania notatek po tytule
+        /// <summary>
+        /// Logika wyszukiwania notatek po tytule
+        /// Czyszczenie wyświetlanych danych
+        /// Zmienia każdorazowo kolor przy kolejnych wyszukiwaniach
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void searchTitleButt_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // Czyszczenie wyświetlanych danych
                 this.MemoListBox.SelectedIndex = -1;
                 this.memoIDTbx.Text = "";
                 this.memoTitleTbx.Text = "";
@@ -171,7 +190,6 @@ namespace DiaryApp.Memo
                 for (int i = 0; i < this.MemoListBox.Items.Count; i++)
                 {
                     li = (ListBoxItem)this.MemoListBox.Items[i];
-                    // Zmienia każdorazowo kolor przy kolejnych wyszukiwaniach
                     li.Background = Brushes.White;
                     if (this.similarCheckBox.IsChecked == false)
                     {
@@ -196,39 +214,49 @@ namespace DiaryApp.Memo
             }
         }
 
+        /// <summary>
+        /// Logika aktualizowania notatek wybranych przez użytkownika
+        /// Sprawdzenie czy nie próbujemy aktualizować notatki bez nr ID
+        /// Zapisywanie notatki w pliku tekstowym (utworzenie trzech oddzielnych plików dla nazwy, daty i treści)
+        /// Zapisywanie notatki w pliku tekstowym (tytuł i data)
+        /// Usuwa starą notatkę i zastępuje ją zaktualizowaną na wypadek użycia nieobsługiwanych znaków w treści
+        /// Zapisywanie notatki w pliku tekstowym (plik rtf)
+        /// Odświeżanie okna po aktualizacji
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void updateBtn_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                // Logika aktualizowania notatek wybranych przez użytkownika
                 long lastID;
                 long.TryParse(this.memoIDTbx.Text, out lastID);
-                // sprawdzenie czy nie próbujemy aktualizować notatki bez nr ID
+
                 if (lastID == 0 || this.MemoListBox.SelectedIndex == -1)
                 {
                     MessageBox.Show("Wrong ID number!");
                     return;
                 }
-                // zapisywanie notatki w pliku tekstowym (utworzenie trzech oddzielnych plików dla nazwy, daty i treści)
+ 
                 string titleFileName = Environment.CurrentDirectory + "\\Data\\Docs\\Memo_title_" + lastID.ToString() + ".txt";
                 string dateFileName = Environment.CurrentDirectory + "\\Data\\Docs\\Memo_date_" + lastID.ToString() + ".txt";
                 string rtfFileName = Environment.CurrentDirectory + "\\Data\\Docs\\Memo_text_" + lastID.ToString() + ".rtf";
 
-                // zapisywanie notatki w pliku tekstowym (tytuł i data)
+                
                 System.IO.File.WriteAllText(titleFileName, this.memoTitleTbx.Text, Encoding.UTF8);
                 System.IO.File.WriteAllText(dateFileName, this.datePicker.Text, Encoding.UTF8);
 
-                // Usuwa starą notatkę i zastępuje ją zaktualizowaną na wypadek użycia nieobsługiwanych znaków w treści
+                
                 if (System.IO.File.Exists(rtfFileName) == true)
                 {
                     System.IO.File.Delete(rtfFileName);
                 }
-                // zapisywanie notatki w pliku tekstowym (plik rtf)
+                
                 TextRange tr = new TextRange(this.rtc.Document.ContentStart, this.rtc.Document.ContentEnd);
                 System.IO.FileStream fileStream = new System.IO.FileStream(rtfFileName, System.IO.FileMode.OpenOrCreate, System.IO.FileAccess.ReadWrite);
                 tr.Save(fileStream, DataFormats.Rtf);
                 fileStream.Close();
-                // odświeżanie okna po aktualizacji
+                
                 SearchMemoWind_Loaded(sender, e);
                 MessageBox.Show("Saved!");
             }

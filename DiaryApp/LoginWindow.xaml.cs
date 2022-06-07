@@ -16,17 +16,25 @@ namespace DiaryApp
             InitializeComponent();
         }
 
-        // zamyka okno logowania
+        /// <summary>
+        /// Zamyka okno logowania
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelButt_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = false;
         }
 
+        /// <summary>
+        /// logika interakcji z hasłem użytkownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OkButt_Click(object sender, RoutedEventArgs e)
         {
             try
             {
-                //logika interakcji z hasłem użytkownika
                 if (this.UserPassBox.Password == "")
                 {
                     MessageBox.Show("Please enter the password!");
@@ -62,17 +70,25 @@ namespace DiaryApp
             }
         }
 
+        /// <summary>
+        /// ustawienie domyślnie użytkownika
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LoginWind_Loaded(object sender, RoutedEventArgs e)
         {
             this.UserCombo.Items.Add(DiaryApp.Properties.Settings.Default.User1Name);
             this.UserCombo.Items.Add(DiaryApp.Properties.Settings.Default.User2Name);
             this.UserCombo.Items.Add(DiaryApp.Properties.Settings.Default.User3Name);
 
-            //ustawienie domyślnie użytkownika
             this.UserCombo.SelectedIndex = 0;
         }
 
-        // ustawia zdjęcie użytkownika wybranego z listy rozwijanej
+        /// <summary>
+        /// ustawia zdjęcie użytkownika wybranego z listy rozwijanej
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UserCombo_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
@@ -85,7 +101,7 @@ namespace DiaryApp
                 }
                 Uri userImageUri = new Uri(userImageName);
 
-                // Ustawienie wybranego obrazu uzytkownika
+                /// Ustawienie wybranego obrazu uzytkownika
                 BitmapImage bmUserImage = new BitmapImage();
                 bmUserImage.BeginInit();
                 bmUserImage.CacheOption = BitmapCacheOption.OnLoad;

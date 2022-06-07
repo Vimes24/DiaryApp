@@ -1,0 +1,464 @@
+\doxysection{Diary\+App.\+Main\+Window Class Reference}
+\label{class_diary_app_1_1_main_window}\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+
+
+Logika interakcji dla klasy Main\+Window.\+xaml  
+
+
+Inheritance diagram for Diary\+App.\+Main\+Window\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.772414cm]{class_diary_app_1_1_main_window}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Main\+Window} ()
+\item 
+void \textbf{ Initialize\+Component} ()
+\begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\item 
+void \textbf{ Initialize\+Component} ()
+\begin{DoxyCompactList}\small\item\em Initialize\+Component \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Diary\+App.\+Main\+Window} \textbf{ Start\+Window}
+\item 
+System.\+Windows.\+Controls.\+Canvas \textbf{ Sidebar\+Panel}
+\item 
+System.\+Windows.\+Controls.\+Label \textbf{ Time\+Label}
+\item 
+System.\+Windows.\+Controls.\+Canvas \textbf{ Calendar\+Panel}
+\item 
+System.\+Windows.\+Controls.\+Label \textbf{ Year\+Label}
+\item 
+System.\+Windows.\+Controls.\+Label \textbf{ Month\+Label}
+\item 
+System.\+Windows.\+Controls.\+Label \textbf{ Day\+Number\+Label}
+\item 
+System.\+Windows.\+Controls.\+Label \textbf{ Day\+Name\+Label}
+\item 
+System.\+Windows.\+Controls.\+Image \textbf{ login\+User\+Image}
+\item 
+System.\+Windows.\+Controls.\+Label \textbf{ login\+User\+Lbl}
+\item 
+System.\+Windows.\+Controls.\+Canvas \textbf{ Top\+Panel}
+\item 
+System.\+Windows.\+Controls.\+Menu \textbf{ Memo\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Menu\+Item \textbf{ add\+Memo\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Menu \textbf{ Search\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Menu\+Item \textbf{ search\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Menu \textbf{ Settings\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Menu\+Item \textbf{ settings\+Main\+Menu}
+\item 
+System.\+Windows.\+Controls.\+Menu\+Item \textbf{ settings\+Sub\+Menu}
+\item 
+System.\+Windows.\+Controls.\+Menu \textbf{ Tools\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Menu\+Item \textbf{ tools\+Main\+Menu}
+\item 
+System.\+Windows.\+Controls.\+Menu \textbf{ Info\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Menu\+Item \textbf{ about\+Main\+Menu}
+\item 
+System.\+Windows.\+Controls.\+Menu\+Item \textbf{ about\+Me\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Button \textbf{ Min\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Button \textbf{ Close\+Butt}
+\item 
+System.\+Windows.\+Controls.\+Canvas \textbf{ Bottom\+Panel}
+\item 
+System.\+Windows.\+Controls.\+Combo\+Box \textbf{ Image\+Combo\+Box}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Image\+Combo\+Box\+\_\+\+Selection\+Changed} (object sender, Selection\+Changed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Ustawienie zmiany tapety w oknie glownym Utworzenie String image\+Name jako dowiazanie do nazwy tapety (+1 bo index zaczynamy od 0) Uri image\+Uri -\/ obiekt odnoszacy sie do lokalizacji danej tapety \end{DoxyCompactList}\item 
+void \textbf{ Start\+Window\+\_\+\+Loaded} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Wczytuje ostatnio zapisana tapete, uruchamia zegar i aktualizuje kalendarz \end{DoxyCompactList}\item 
+void \textbf{ Time\+Update} (object sender, Event\+Args e)
+\begin{DoxyCompactList}\small\item\em zawartosc etykiety zostala przypisana do aktualnego czasu komputera \end{DoxyCompactList}\item 
+void \textbf{ Min\+Butt\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\item 
+void \textbf{ Close\+Butt\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Zamykanie okna aplikacji \end{DoxyCompactList}\item 
+void \textbf{ Start\+Window\+\_\+\+Size\+Changed} (object sender, Size\+Changed\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Ustawienie przyciskow z prawej strony wraz ze zmiana rozmiaru okna. \end{DoxyCompactList}\item 
+void \textbf{ Menu\+Item\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\item 
+void \textbf{ about\+Me\+Butt\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\item 
+void \textbf{ add\+Memo\+Butt\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\item 
+void \textbf{ search\+Butt\+\_\+\+Click} (object sender, Routed\+Event\+Args e)
+\item 
+void \textbf{ Start\+Window\+\_\+\+Key\+Down} (object sender, System.\+Windows.\+Input.\+Key\+Event\+Args e)
+\begin{DoxyCompactList}\small\item\em Użycie klawiszy klawiatury do wybierania opcji \end{DoxyCompactList}\item 
+void System.\+Windows.\+Markup.\+IComponent\+Connector. \textbf{ Connect} (int connection\+Id, object target)
+\item 
+void System.\+Windows.\+Markup.\+IComponent\+Connector. \textbf{ Connect} (int connection\+Id, object target)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ \+\_\+content\+Loaded}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logika interakcji dla klasy Main\+Window.\+xaml 
+
+\doxyref{Main\+Window}{p.}{class_diary_app_1_1_main_window} 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_diary_app_1_1_main_window_ada013e66a205ad3152fe6894f7c9209c}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{MainWindow()}
+{\footnotesize\ttfamily Diary\+App.\+Main\+Window.\+Main\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\label{class_diary_app_1_1_main_window_acc052a79f099aa919faac82568d87534}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!aboutMeButt\_Click@{aboutMeButt\_Click}}
+\index{aboutMeButt\_Click@{aboutMeButt\_Click}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{aboutMeButt\_Click()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+about\+Me\+Butt\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_ad19e1f6e011328431119989bdd2946bd}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!addMemoButt\_Click@{addMemoButt\_Click}}
+\index{addMemoButt\_Click@{addMemoButt\_Click}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{addMemoButt\_Click()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+add\+Memo\+Butt\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a8df9807dc15f49558247ec478d3d4dd0}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!CloseButt\_Click@{CloseButt\_Click}}
+\index{CloseButt\_Click@{CloseButt\_Click}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{CloseButt\_Click()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Close\+Butt\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Zamykanie okna aplikacji 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_diary_app_1_1_main_window_a35bb4905d5d470089bafb0a6de6e39a8}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!Connect@{Connect}}
+\index{Connect@{Connect}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{Connect()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void System.\+Windows.\+Markup.\+IComponent\+Connector. Diary\+App.\+Main\+Window.\+Connect (\begin{DoxyParamCaption}\item[{int}]{connection\+Id,  }\item[{object}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a35bb4905d5d470089bafb0a6de6e39a8}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!Connect@{Connect}}
+\index{Connect@{Connect}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{Connect()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void System.\+Windows.\+Markup.\+IComponent\+Connector. Diary\+App.\+Main\+Window.\+Connect (\begin{DoxyParamCaption}\item[{int}]{connection\+Id,  }\item[{object}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_af4c7aebdcd7f0a92f248cbd6e6977519}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!ImageComboBox\_SelectionChanged@{ImageComboBox\_SelectionChanged}}
+\index{ImageComboBox\_SelectionChanged@{ImageComboBox\_SelectionChanged}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{ImageComboBox\_SelectionChanged()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Image\+Combo\+Box\+\_\+\+Selection\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Selection\+Changed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ustawienie zmiany tapety w oknie glownym Utworzenie String image\+Name jako dowiazanie do nazwy tapety (+1 bo index zaczynamy od 0) Uri image\+Uri -\/ obiekt odnoszacy sie do lokalizacji danej tapety 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+Zapisanie zmian w ustawieniach -\/ ostatnio wybrana tapeta pojawi sie przy kolejnym uruchomieniu aplikacji\mbox{\label{class_diary_app_1_1_main_window_a9da0671f6de335226fc898ab2a0305ec}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!InitializeComponent@{InitializeComponent}}
+\index{InitializeComponent@{InitializeComponent}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{InitializeComponent()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Initialize\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize\+Component 
+
+\mbox{\label{class_diary_app_1_1_main_window_a9da0671f6de335226fc898ab2a0305ec}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!InitializeComponent@{InitializeComponent}}
+\index{InitializeComponent@{InitializeComponent}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{InitializeComponent()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Initialize\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize\+Component 
+
+\mbox{\label{class_diary_app_1_1_main_window_a3e6c06c535ec4eb493c70e1721cfb4a7}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!MenuItem\_Click@{MenuItem\_Click}}
+\index{MenuItem\_Click@{MenuItem\_Click}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{MenuItem\_Click()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Menu\+Item\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a0096005424fb9830fa722a474e31eb14}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!MinButt\_Click@{MinButt\_Click}}
+\index{MinButt\_Click@{MinButt\_Click}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{MinButt\_Click()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Min\+Butt\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a0ef65a9580cc5e5bc750099d96acea97}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!searchButt\_Click@{searchButt\_Click}}
+\index{searchButt\_Click@{searchButt\_Click}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{searchButt\_Click()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+search\+Butt\+\_\+\+Click (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_aa3fdc91f04916031cd9d67b1c8eb8549}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!StartWindow\_KeyDown@{StartWindow\_KeyDown}}
+\index{StartWindow\_KeyDown@{StartWindow\_KeyDown}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{StartWindow\_KeyDown()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Start\+Window\+\_\+\+Key\+Down (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{System.\+Windows.\+Input.\+Key\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Użycie klawiszy klawiatury do wybierania opcji 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_diary_app_1_1_main_window_af8c5cf818b2d2726f2931514c4994d2c}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!StartWindow\_Loaded@{StartWindow\_Loaded}}
+\index{StartWindow\_Loaded@{StartWindow\_Loaded}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{StartWindow\_Loaded()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Start\+Window\+\_\+\+Loaded (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Routed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Wczytuje ostatnio zapisana tapete, uruchamia zegar i aktualizuje kalendarz 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sender} & \\
+\hline
+{\em e} & \\
+\hline
+\end{DoxyParams}
+uruchomienie okna logowania
+
+Uruchamianie zegara w aplikacji, czas zmienia sie co 1s
+
+aktualizacja kalendarza
+
+ładowanie zdjęcia i nazwy użytkownika po zalogowaniu\mbox{\label{class_diary_app_1_1_main_window_a995471e1e54f55763c0c60ccf09f8d20}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!StartWindow\_SizeChanged@{StartWindow\_SizeChanged}}
+\index{StartWindow\_SizeChanged@{StartWindow\_SizeChanged}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{StartWindow\_SizeChanged()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Start\+Window\+\_\+\+Size\+Changed (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Size\+Changed\+Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ustawienie przyciskow z prawej strony wraz ze zmiana rozmiaru okna. 
+
+\mbox{\label{class_diary_app_1_1_main_window_a42796ae66211900344ae34af420581ea}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!TimeUpdate@{TimeUpdate}}
+\index{TimeUpdate@{TimeUpdate}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{TimeUpdate()}
+{\footnotesize\ttfamily void Diary\+App.\+Main\+Window.\+Time\+Update (\begin{DoxyParamCaption}\item[{object}]{sender,  }\item[{Event\+Args}]{e }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+zawartosc etykiety zostala przypisana do aktualnego czasu komputera 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\label{class_diary_app_1_1_main_window_ad56939414a53b1b141828cd0a43d4e13}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!\_contentLoaded@{\_contentLoaded}}
+\index{\_contentLoaded@{\_contentLoaded}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{\_contentLoaded}
+{\footnotesize\ttfamily bool Diary\+App.\+Main\+Window.\+\_\+content\+Loaded\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a3dbd589ce967d3be6ca19de669e129e5}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!aboutMainMenu@{aboutMainMenu}}
+\index{aboutMainMenu@{aboutMainMenu}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{aboutMainMenu}
+{\footnotesize\ttfamily System Windows Controls Menu\+Item Diary\+App.\+Main\+Window.\+about\+Main\+Menu\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a8af617c98669c4e016956b7c59d9c8aa}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!aboutMeButt@{aboutMeButt}}
+\index{aboutMeButt@{aboutMeButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{aboutMeButt}
+{\footnotesize\ttfamily System Windows Controls Menu\+Item Diary\+App.\+Main\+Window.\+about\+Me\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a091125b85b87649283bb0f2d321816b1}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!addMemoButt@{addMemoButt}}
+\index{addMemoButt@{addMemoButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{addMemoButt}
+{\footnotesize\ttfamily System Windows Controls Menu\+Item Diary\+App.\+Main\+Window.\+add\+Memo\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a6cb4066b12519b1eb89e84355c1de032}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!BottomPanel@{BottomPanel}}
+\index{BottomPanel@{BottomPanel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{BottomPanel}
+{\footnotesize\ttfamily System Windows Controls Canvas Diary\+App.\+Main\+Window.\+Bottom\+Panel\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_abcee3859ad5104278af60adb152e5ac5}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!CalendarPanel@{CalendarPanel}}
+\index{CalendarPanel@{CalendarPanel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{CalendarPanel}
+{\footnotesize\ttfamily System Windows Controls Canvas Diary\+App.\+Main\+Window.\+Calendar\+Panel\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a778905bd69d1f93b7654d50fc87e84e8}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!CloseButt@{CloseButt}}
+\index{CloseButt@{CloseButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{CloseButt}
+{\footnotesize\ttfamily System Windows Controls Button Diary\+App.\+Main\+Window.\+Close\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_aa7af8e3e0b3cd56acf06550702bdf26c}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!DayNameLabel@{DayNameLabel}}
+\index{DayNameLabel@{DayNameLabel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{DayNameLabel}
+{\footnotesize\ttfamily System Windows Controls Label Diary\+App.\+Main\+Window.\+Day\+Name\+Label\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a04a9a3c10e4113a45c706c10c6cdd734}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!DayNumberLabel@{DayNumberLabel}}
+\index{DayNumberLabel@{DayNumberLabel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{DayNumberLabel}
+{\footnotesize\ttfamily System Windows Controls Label Diary\+App.\+Main\+Window.\+Day\+Number\+Label\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a18a42e973d257c491252fa99b69c216b}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!ImageComboBox@{ImageComboBox}}
+\index{ImageComboBox@{ImageComboBox}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{ImageComboBox}
+{\footnotesize\ttfamily System Windows Controls Combo\+Box Diary\+App.\+Main\+Window.\+Image\+Combo\+Box\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a601b77c9cff6b65497c4e6572aca66fb}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!InfoButt@{InfoButt}}
+\index{InfoButt@{InfoButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{InfoButt}
+{\footnotesize\ttfamily System Windows Controls Menu Diary\+App.\+Main\+Window.\+Info\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a99af3c955dc1af6aa63dcecbbdda6426}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!loginUserImage@{loginUserImage}}
+\index{loginUserImage@{loginUserImage}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{loginUserImage}
+{\footnotesize\ttfamily System Windows Controls Image Diary\+App.\+Main\+Window.\+login\+User\+Image\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_aff8f9fc36337b39c6c5aa89950e88de3}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!loginUserLbl@{loginUserLbl}}
+\index{loginUserLbl@{loginUserLbl}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{loginUserLbl}
+{\footnotesize\ttfamily System Windows Controls Label Diary\+App.\+Main\+Window.\+login\+User\+Lbl\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a28f8f5d8e825b83cdf8f4790e4c3201e}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!MemoButt@{MemoButt}}
+\index{MemoButt@{MemoButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{MemoButt}
+{\footnotesize\ttfamily System Windows Controls Menu Diary\+App.\+Main\+Window.\+Memo\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a518cb4b700ffadd90ae9cb7b405dfdd9}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!MinButt@{MinButt}}
+\index{MinButt@{MinButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{MinButt}
+{\footnotesize\ttfamily System Windows Controls Button Diary\+App.\+Main\+Window.\+Min\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_ac930cf5454e48966d773ddddd0a54e96}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!MonthLabel@{MonthLabel}}
+\index{MonthLabel@{MonthLabel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{MonthLabel}
+{\footnotesize\ttfamily System Windows Controls Label Diary\+App.\+Main\+Window.\+Month\+Label\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a2d6a56b3a3f4bc280795e90d2c930f26}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!SearchButt@{SearchButt}}
+\index{SearchButt@{SearchButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{SearchButt}
+{\footnotesize\ttfamily System Windows Controls Menu Diary\+App.\+Main\+Window.\+Search\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a41500e838b2e345f99da10928417cdcb}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!searchButt@{searchButt}}
+\index{searchButt@{searchButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{searchButt}
+{\footnotesize\ttfamily System Windows Controls Menu\+Item Diary\+App.\+Main\+Window.\+search\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_adc801bdbece997cee374f61d60b02586}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!SettingsButt@{SettingsButt}}
+\index{SettingsButt@{SettingsButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{SettingsButt}
+{\footnotesize\ttfamily System Windows Controls Menu Diary\+App.\+Main\+Window.\+Settings\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a8030c4e5e7c859990b36b1c67436be97}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!settingsMainMenu@{settingsMainMenu}}
+\index{settingsMainMenu@{settingsMainMenu}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{settingsMainMenu}
+{\footnotesize\ttfamily System Windows Controls Menu\+Item Diary\+App.\+Main\+Window.\+settings\+Main\+Menu\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a298131adac981272ca0dcfdea2f7b086}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!settingsSubMenu@{settingsSubMenu}}
+\index{settingsSubMenu@{settingsSubMenu}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{settingsSubMenu}
+{\footnotesize\ttfamily System Windows Controls Menu\+Item Diary\+App.\+Main\+Window.\+settings\+Sub\+Menu\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a86df9b0cb9278a4732efa11d025becff}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!SidebarPanel@{SidebarPanel}}
+\index{SidebarPanel@{SidebarPanel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{SidebarPanel}
+{\footnotesize\ttfamily System Windows Controls Canvas Diary\+App.\+Main\+Window.\+Sidebar\+Panel\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_ae975bbaf8ec5469806de702e42f42410}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!StartWindow@{StartWindow}}
+\index{StartWindow@{StartWindow}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{StartWindow}
+{\footnotesize\ttfamily Diary\+App \textbf{ Main\+Window} Diary\+App.\+Main\+Window.\+Start\+Window\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a6b53a8f821456f1b471ce8afd3213f84}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!TimeLabel@{TimeLabel}}
+\index{TimeLabel@{TimeLabel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{TimeLabel}
+{\footnotesize\ttfamily System Windows Controls Label Diary\+App.\+Main\+Window.\+Time\+Label\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_aabe282dbbe899a72ca90ffd53bb586dd}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!ToolsButt@{ToolsButt}}
+\index{ToolsButt@{ToolsButt}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{ToolsButt}
+{\footnotesize\ttfamily System Windows Controls Menu Diary\+App.\+Main\+Window.\+Tools\+Butt\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a43a3e8c6a6c3898bda7852674cab7106}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!toolsMainMenu@{toolsMainMenu}}
+\index{toolsMainMenu@{toolsMainMenu}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{toolsMainMenu}
+{\footnotesize\ttfamily System Windows Controls Menu\+Item Diary\+App.\+Main\+Window.\+tools\+Main\+Menu\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a8be99f851066afadf25fc08040057266}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!TopPanel@{TopPanel}}
+\index{TopPanel@{TopPanel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{TopPanel}
+{\footnotesize\ttfamily System Windows Controls Canvas Diary\+App.\+Main\+Window.\+Top\+Panel\hspace{0.3cm}{\ttfamily [package]}}
+
+\mbox{\label{class_diary_app_1_1_main_window_a9a4878f0b1796af5d13d41e7fc5b8286}} 
+\index{DiaryApp.MainWindow@{DiaryApp.MainWindow}!YearLabel@{YearLabel}}
+\index{YearLabel@{YearLabel}!DiaryApp.MainWindow@{DiaryApp.MainWindow}}
+\doxysubsubsection{YearLabel}
+{\footnotesize\ttfamily System Windows Controls Label Diary\+App.\+Main\+Window.\+Year\+Label\hspace{0.3cm}{\ttfamily [package]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+W\+:/studia/\+Materialy WSIZ/\+IV semestr/\+Szkolenie\+\_\+\+Techniczne\+\_\+1/\+Projekt/\+Diary\+App/\+Diary\+App/\textbf{ Main\+Window.\+xaml.\+cs}\item 
+W\+:/studia/\+Materialy WSIZ/\+IV semestr/\+Szkolenie\+\_\+\+Techniczne\+\_\+1/\+Projekt/\+Diary\+App/\+Diary\+App/obj/\+Debug/\textbf{ Main\+Window.\+g.\+cs}\item 
+W\+:/studia/\+Materialy WSIZ/\+IV semestr/\+Szkolenie\+\_\+\+Techniczne\+\_\+1/\+Projekt/\+Diary\+App/\+Diary\+App/obj/\+Debug/\textbf{ Main\+Window.\+g.\+i.\+cs}\end{DoxyCompactItemize}
